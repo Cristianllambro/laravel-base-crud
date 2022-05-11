@@ -1,10 +1,11 @@
 @extends('template.base')
-@section('pageTitle', 'Create New Comics')
+@section('pageTitle', 'Create New Comic')
 @section('contentMain')
 <div class="container">
     <div class="row">
         <div class="col">
-            <form>
+            <form method="POST" action="{{ route('comics.store')}}">
+                @csrf
                 <div class="mb-3 pt-5">
                     <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" >
@@ -22,7 +23,7 @@
               
                 <div class="mb-3">
                       <label for="price" class="form-label">Price:</label>
-                      <input type="number" step="0.01" class="form-control" id="price" name="price" >
+                      <input type="number" class="form-control" id="price" name="price" >
                 </div>
               
                 <div class="mb-3">
