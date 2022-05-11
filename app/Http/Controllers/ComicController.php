@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -38,7 +38,7 @@ class ComicController extends Controller
     {
         $data = $request->all();
         $newComic = Comic::create($data);
-        return redirect()->route('comics.index', $newComic->id);
+        return redirect()->route('comics.index');
     }
 
     /**
