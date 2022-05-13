@@ -13,6 +13,12 @@
                         <p class="card-text">Series: {{$item->series}}</p>
                         <p class="card-text">Type: {{$item->type}}</p>
                         <a href="{{route('comics.show', $item->id)}}" class="btn btn-primary">Info</a>
+                        <a href="{{route('comics.edit', $item->id)}}" class="btn btn-primary">Edit</a>
+                        <form action="{{ route('comics.destroy', $item->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" onclick="confirmDelete()" >Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
