@@ -12,9 +12,9 @@
                         <p class="card-text">Price: $ {{$item->price}}</p>
                         <p class="card-text">Series: {{$item->series}}</p>
                         <p class="card-text">Type: {{$item->type}}</p>
-                        <a href="{{route('comics.show', $item->id)}}" class="btn btn-primary">Info</a>
-                        <a href="{{route('comics.edit', $item->id)}}" class="btn btn-primary">Edit</a>
-                        <form action="{{ route('comics.destroy', $item->id) }}" method="POST">
+                        <a href="{{route('comics.show', $item->id)}}" class="btn btn-primary px-3 me-2">Info</a>
+                        <a href="{{route('comics.edit', $item->id)}}" class="btn btn-primary px-3 me-2">Edit</a>
+                        <form class="d-inline" action="{{ route('comics.destroy', $item->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" onclick="confirmDelete()" >Delete</button>
